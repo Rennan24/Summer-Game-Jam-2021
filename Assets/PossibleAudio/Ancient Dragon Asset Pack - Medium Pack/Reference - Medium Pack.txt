@@ -1,0 +1,30 @@
+Medium Pack:
+
+5 - Darkness Ahead (Dungeon 2)
+Duration: (02:06)
+BPM: 76
+
+6 - Good Neighborhood (Town 2)
+Duration: (02:03)
+BPM: 46
+
+7 - Picturesque Journey (Travel 2)
+Duration: (02:14)
+BPM: 68
+
+8 - Your Turn! (Battle 2)
+Duration: (01:40)
+BPM: 100
+
+9 - Quite a Challenge (Boss 1)
+Duration: (01:22)
+BPM: 170
+
+10 - Sacred Place (Holy)
+Duration: (02:11)
+BPM: 55
+
+Stingers:
+Quest Complete (Victory 2)
+My Weak Point (Defeat 2)
+Ready to Fight! (Transition 1)
