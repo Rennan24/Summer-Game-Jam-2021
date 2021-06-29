@@ -11,6 +11,16 @@ namespace AmplifyShaderEditor
 		{
 			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "0770190933193b94aaa3065e307002fa" );
 		}
+		[MenuItem( "Assets/Create/Amplify Shader/Universal/PBR", false, 85 )]
+		public static void ApplyTemplateUniversalPBR()
+		{
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "94348b07e5e8bab40bd6c8a1e3df54cd" );
+		}
+		[MenuItem( "Assets/Create/Amplify Shader/Universal/Unlit", false, 85 )]
+		public static void ApplyTemplateUniversalUnlit()
+		{
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "2992e84f91cbeb14eab234972e07ea9d" );
+		}
 		[MenuItem( "Assets/Create/Amplify Shader/Legacy/Post Process", false, 85 )]
 		public static void ApplyTemplateLegacyPostProcess()
 		{
@@ -51,25 +61,30 @@ namespace AmplifyShaderEditor
 		{
 			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "ed95fe726fd7b4644bb42f4d1ddd2bcd" );
 		}
+		[MenuItem( "Assets/Create/Amplify Shader/Universal/Experimental/2D Lit", false, 85 )]
+		public static void ApplyTemplateUniversalExperimental2DLit()
+		{
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "199187dac283dbe4a8cb1ea611d70c58" );
+		}
 		[MenuItem( "Assets/Create/Amplify Shader/Universal/Experimental/2D Unlit", false, 85 )]
 		public static void ApplyTemplateUniversalExperimental2DUnlit()
 		{
 			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "cf964e524c8e69742b1d21fbe2ebcc4a" );
 		}
-		[MenuItem( "Assets/Create/Amplify Shader/Universal/Unlit", false, 85 )]
-		public static void ApplyTemplateUniversalUnlit()
+		[MenuItem( "Assets/Create/Amplify Shader/Particles Alpha Blended + TEXCOORD1", false, 85 )]
+		public static void ApplyTemplateParticlesAlphaBlendedTEXCOORD1()
 		{
-			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "2992e84f91cbeb14eab234972e07ea9d" );
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "39608c403216c2545817cb3fb95a1410" );
 		}
-		[MenuItem( "Assets/Create/Amplify Shader/Universal/PBR", false, 85 )]
-		public static void ApplyTemplateUniversalPBR()
+		[MenuItem( "Assets/Create/Amplify Shader/Particles Alpha Blended Textureless", false, 85 )]
+		public static void ApplyTemplateParticlesAlphaBlendedTextureless()
 		{
-			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "94348b07e5e8bab40bd6c8a1e3df54cd" );
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "0e84dec801abe9344801a4c455580029" );
 		}
-		[MenuItem( "Assets/Create/Amplify Shader/Universal/Experimental/2D Lit", false, 85 )]
-		public static void ApplyTemplateUniversalExperimental2DLit()
+		[MenuItem( "Assets/Create/Amplify Shader/Particles Anim Alpha Blended + MV Tex", false, 85 )]
+		public static void ApplyTemplateParticlesAnimAlphaBlendedMVTex()
 		{
-			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "199187dac283dbe4a8cb1ea611d70c58" );
+			AmplifyShaderEditorWindow.CreateConfirmationTemplateShader( "7f168dab9088a6842a89d1cb6141f4e8" );
 		}
 	}
 }
