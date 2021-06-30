@@ -1,29 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager: MonoSingleton<ScoreManager>
 {
+	private int _score;
+	public int Score
+	{
+		get => _score;
+		set {
+			_score = Mathf.Max(0, value);
+			scoreText.text = $"{Score}";
+			gameOver.text = $"Game Over! Your Score: {_score}";
+		}
+	}
 
-    public int score;
-
-    [SerializeField]
-    private TextMeshProUGUI scoreText;
-    [SerializeField]
-    private TextMeshProUGUI gameOver;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        scoreText.text = score.ToString();
-        gameOver.text = "Game Over!" + "Your Score:" + score.ToString();
-    }
+	[Header("References:")]
+	[SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI gameOver;
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Health: MonoBehaviour
 {
@@ -6,8 +7,6 @@ public class Health: MonoBehaviour
 	public float DamageDelay = 1f;
 	public bool DestroyOnDeath = true;
 	public int scoreValue = 100;
-
-	public ScoreManager ScoreManager;
 
 	[SerializeField]
 	private int _curHealth;
@@ -29,11 +28,10 @@ public class Health: MonoBehaviour
 
 	float damageTime = -1f;
 
-	private void Awake()
+	void Start()
 	{
 		CurHealth = MaxHealth;
-		ScoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-
+		Killed += pos => ScoreManager.Inst.Score += scoreValue;
 	}
 
 	public void Damage(int amount, Vector3 hitPos = default)
@@ -45,15 +43,13 @@ public class Health: MonoBehaviour
 		CurHealth -= amount;
 		Damaged?.Invoke(amount, CurHealth, hitPos);
 
-		if (CurHealth <= 0)
+		if (CurHealth <= 0 && !IsKilled)
 		{
 			IsKilled = true;
 			Killed?.Invoke(hitPos);
 
-			if(DestroyOnDeath){
-				ScoreManager.score += scoreValue;
+			if (DestroyOnDeath)
 				Destroy(gameObject);
-			}
 		}
 	}
 
