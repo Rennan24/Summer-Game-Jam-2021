@@ -7,7 +7,7 @@ public class escBack : MonoBehaviour
 {
     void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-         SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
