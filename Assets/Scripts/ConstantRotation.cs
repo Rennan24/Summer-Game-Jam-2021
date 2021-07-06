@@ -8,7 +8,7 @@ public class ConstantRotation : MonoBehaviour
 	void Start()
 	{
 		if (randomizeOnStart)
-			transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
+			transform.eulerAngles += new Vector3(0, 0, Random.Range(0, 360));
 	}
 
 	void Update()

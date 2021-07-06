@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4980647891623563833}
   - component: {fileID: 4980647891623563835}
   - component: {fileID: 1988848924}
-  - component: {fileID: -3753179460325120553}
+  - component: {fileID: 2409378146426208054}
   m_Layer: 0
   m_Name: PlayerBullet
-  m_TagString: bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4980647891623563838}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e0c65afc3bd20004f9652b93fb9c78b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,8 +118,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
---- !u!60 &-3753179460325120553
-PolygonCollider2D:
+--- !u!58 &2409378146426208054
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,24 +132,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.46}
-    newSize: {x: 0.48, y: 0.46}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.19999999, y: 0.07}
-      - {x: 0.049999997, y: 0.22999999}
-      - {x: -0.07, y: 0.22999999}
-      - {x: -0.24, y: 0.049999997}
-      - {x: -0.24, y: -0.099999994}
-      - {x: -0.049999997, y: -0.22999999}
-      - {x: 0.08, y: -0.22999999}
-      - {x: 0.089999996, y: -0.17}
-      - {x: 0.24, y: -0.04}
-      - {x: 0.24, y: 0.04}
+  serializedVersion: 2
+  m_Radius: 0.24

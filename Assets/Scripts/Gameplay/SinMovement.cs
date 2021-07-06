@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SinMovement: MonoBehaviour
@@ -12,11 +11,6 @@ public class SinMovement: MonoBehaviour
 	float startY;
 
 #if UNITY_EDITOR
-	void OnValidate()
-	{
-
-	}
-
 	void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.red;
@@ -50,7 +44,7 @@ public class SinMovement: MonoBehaviour
 		if (lookTowards)
 		{
 			var dir = (transform.position - pos).normalized;
-			transform.rotation = Quaternion.LookRotation(Vector3.back, dir);
+			transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
 		}
 
 		transform.position = pos;

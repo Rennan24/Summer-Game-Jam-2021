@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 5394666221784545308}
   - component: {fileID: 5394666221784545298}
   - component: {fileID: 5394666221784545299}
-  - component: {fileID: 5394666221784545296}
+  - component: {fileID: 6987342183375819492}
+  - component: {fileID: 2283238118575687250}
   - component: {fileID: 5394666221784545297}
-  m_Layer: 0
+  - component: {fileID: 5394666221784545296}
+  m_Layer: 6
   m_Name: Enemy_Black1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +44,7 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5394666221784545309}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -54,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1d6baf41394a9f948b55199632faa1f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,6 +104,53 @@ MonoBehaviour:
   frequency: 5
   amplitude: 1
   lookTowards: 1
+--- !u!114 &6987342183375819492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394666221784545309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a97fe8dcb2a11f498e65e81d01e252c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  DamageDelay: 0
+  DestroyOnDeath: 1
+  scoreValue: 100
+  _curHealth: 0
+--- !u!114 &2283238118575687250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394666221784545309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6037a77d1ddbf04fa37128533893020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  destroyOnCollision: 0
+--- !u!58 &5394666221784545297
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394666221784545309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!50 &5394666221784545296
 Rigidbody2D:
   serializedVersion: 4
@@ -123,19 +172,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5394666221784545297
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5394666221784545309}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.4

@@ -9,8 +9,8 @@ public class ScoreManager: MonoSingleton<ScoreManager>
 		get => _score;
 		set {
 			_score = Mathf.Max(0, value);
-			scoreText.text = $"{Score}";
-			gameOver.text = $"Game Over! Your Score: {_score}";
+			// scoreText.text = $"{Score}";
+			// gameOver.text = $"Game Over! Your Score: {_score}";
 		}
 	}
 

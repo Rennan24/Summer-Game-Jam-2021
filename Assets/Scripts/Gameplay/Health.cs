@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health: MonoBehaviour
 {
 	public int MaxHealth     = 3;
-	public float DamageDelay = 1f;
+	public float DamageDelay = 0;
 	public bool DestroyOnDeath = true;
 	public int scoreValue = 100;
 
