@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController: MonoBehaviour
@@ -8,7 +9,17 @@ public class PlayerController: MonoBehaviour
 
 	Vector2 move;
 
-	public void Update()
+	[SerializeField] Health health;
+	public Health Health => health;
+
+#if UNITY_EDITOR
+	void OnValidate()
+	{
+		if (!health) health = GetComponent<Health>();
+	}
+#endif
+
+	void Update()
 	{
 		var dt = Time.deltaTime;
 
@@ -22,5 +33,9 @@ public class PlayerController: MonoBehaviour
 			foreach (var shooter in shooters)
 				shooter.Shoot();
 		}
+
+		if (Input.GetKeyDown(KeyCode.F))
+			health.Damage(1);
+
 	}
 }

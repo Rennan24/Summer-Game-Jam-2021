@@ -148,6 +148,7 @@ MonoBehaviour:
   shooters:
   - {fileID: 994792190}
   - {fileID: 694107062}
+  health: {fileID: 2309553525401641431}
 --- !u!114 &2309553525401641431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,10 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a97fe8dcb2a11f498e65e81d01e252c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 3
+  MaxHealth: 5
   DamageDelay: 1
   DestroyOnDeath: 1
-  scoreValue: 100
+  scoreValue: 0
   _curHealth: 0
 --- !u!58 &6725392234952961364
 CircleCollider2D:

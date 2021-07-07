@@ -31,7 +31,7 @@ public class Health: MonoBehaviour
 	void Start()
 	{
 		CurHealth = MaxHealth;
-		Killed += pos => ScoreManager.Inst.Score += scoreValue;
+		Killed += pos => GameUIManager.Inst.Score += scoreValue;
 	}
 
 	public void Damage(int amount, Vector3 hitPos = default)
