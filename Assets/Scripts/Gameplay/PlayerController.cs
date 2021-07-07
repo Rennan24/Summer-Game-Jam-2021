@@ -5,12 +5,15 @@ public class PlayerController: MonoBehaviour
 {
 	[SerializeField] float moveSpeed = 5f;
 	[SerializeField] float moveSmoothing = 2f;
-	[SerializeField] BulletShooter[] shooters;
+	[SerializeField] Shooter[] shooters;
+	[SerializeField] Shooter[] Trigun;
 
 	Vector2 move;
 
 	[SerializeField] Health health;
 	public Health Health => health;
+
+	Shooter[] curShooters;
 
 #if UNITY_EDITOR
 	void OnValidate()
@@ -18,6 +21,11 @@ public class PlayerController: MonoBehaviour
 		if (!health) health = GetComponent<Health>();
 	}
 #endif
+
+	void Start()
+	{
+		curShooters = shooters;
+	}
 
 	void Update()
 	{
@@ -30,12 +38,17 @@ public class PlayerController: MonoBehaviour
 
 		if (InputManager.AttackDown)
 		{
-			foreach (var shooter in shooters)
+			foreach (var shooter in curShooters)
 				shooter.Shoot();
 		}
 
 		if (Input.GetKeyDown(KeyCode.F))
 			health.Damage(1);
 
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+			curShooters = shooters;
+
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+			curShooters = Trigun;
 	}
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694107060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.4, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994792188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.4, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -148,6 +148,7 @@ MonoBehaviour:
   shooters:
   - {fileID: 994792190}
   - {fileID: 694107062}
+  Trigun: []
   health: {fileID: 2309553525401641431}
 --- !u!114 &2309553525401641431
 MonoBehaviour:

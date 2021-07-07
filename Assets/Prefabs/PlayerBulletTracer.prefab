@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4980647891623563832}
   - component: {fileID: 4980647891623563833}
-  - component: {fileID: 4980647891623563835}
   - component: {fileID: 1988848924}
   - component: {fileID: 2409378146426208054}
   m_Layer: 0
-  m_Name: PlayerBullet
+  m_Name: PlayerBulletTracer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4980647891623563838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52f1358a37f01574bb5366980df3456d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8322f901313a50f46b1bc73903907ddc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4980647891623563835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4980647891623563838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acf6bc83fb69bd44939d14dd63e65c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: -540
-  randomizeOnStart: 1
 --- !u!114 &1988848924
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ public class Bullet: MonoBehaviour
 	[SerializeField] int damage;
 	[SerializeField] LayerMask mask;
 
-	public Bullet Spawn(Vector3 pos, Vector2 dir, float speed)
+	public Bullet Spawn(Vector3 pos, Vector2 dir, float speed, Quaternion rot = default)
 	{
-		var bullet = Instantiate(this, pos, transform.rotation);
+		var bullet = Instantiate(this, pos, rot);
 		bullet.direction = dir;
 		bullet.speed = speed;
 
