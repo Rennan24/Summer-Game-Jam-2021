@@ -7,6 +7,9 @@ public class GameUIManager: MonoSingleton<GameUIManager>
 	[SerializeField] TMP_Text scoreText;
 	[SerializeField] float scoreTweenTime = 1f;
 	
+	[SerializeField] TMP_Text livesText;
+	[SerializeField] float livesTweenTime = 1f;
+
 	[SerializeField] RectTransform healthbar;
 	[SerializeField] float healthbarTweenTime = 1f;
 
@@ -19,6 +22,19 @@ public class GameUIManager: MonoSingleton<GameUIManager>
 			_score = Mathf.Max(0, value);
 			DOVirtual.Float(prevScore, _score, scoreTweenTime, value => {
 				scoreText.text = $"{value:F0}";
+			}).SetEase(Ease.OutSine);
+		}
+	}
+
+	private int _lives = 3;
+	public int Lives
+{
+		get => _lives;
+		set {
+			var prevLives = _lives;
+			_lives = Mathf.Max(0, value);
+			DOVirtual.Float(prevLives, _lives, livesTweenTime, value => {
+				livesText.text = $"{value:F0}";
 			}).SetEase(Ease.OutSine);
 		}
 	}
