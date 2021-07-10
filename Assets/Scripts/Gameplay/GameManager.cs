@@ -12,9 +12,7 @@ public class GameManager: MonoSingleton<GameManager>
 #if UNITY_EDITOR
 	void OnValidate()
 	{
-		Vector2 pos = transform.position;
-		PlayerBounds = new Rect(pos - playerBoundsSize / 2, playerBoundsSize); // CalculateBounds(playerBoundsSize);
-		WorldBounds  = new Rect(pos -  worldBoundsSize / 2, worldBoundsSize);  // CalculateBounds(worldBoundsSize);
+		Start();
 	}
 
 	void OnDrawGizmos()
@@ -28,7 +26,9 @@ public class GameManager: MonoSingleton<GameManager>
 
 	void Start()
 	{
-
+		Vector2 pos = transform.position;
+		PlayerBounds = new Rect(pos - playerBoundsSize / 2, playerBoundsSize); // CalculateBounds(playerBoundsSize);
+		WorldBounds  = new Rect(pos -  worldBoundsSize / 2, worldBoundsSize);  // CalculateBounds(worldBoundsSize);
 	}
 
 	public Rect CalculateBounds(Vector2 offset)
