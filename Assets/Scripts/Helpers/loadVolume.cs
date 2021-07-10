@@ -5,7 +5,6 @@ using UnityEngine;
 public class loadVolume : MonoBehaviour
 {
 
-    private static readonly string volPref = "VolumePref";
     private float volFloat;
     public new AudioSource audio;
 
@@ -14,7 +13,7 @@ public class loadVolume : MonoBehaviour
     }
 
     private void loadVolumeSettings(){
-        volFloat = PlayerPrefs.GetFloat(volPref);
+        volFloat = 1f;
         audio.volume = volFloat;
     }
 }

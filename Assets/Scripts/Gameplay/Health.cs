@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health: MonoBehaviour
 {
@@ -13,10 +13,8 @@ public class Health: MonoBehaviour
 	public TMP_Text livesText;
 	Vector2 originalShipPos;
 	GameObject go;
-	public TMP_Text gameOver;
-	public TMP_Text gameOverLabel;
-	public GameObject playAgain;
 	Vector2 originalEnemyPos;
+	private static readonly string finalScore = "FinalScore";
 
 	[SerializeField]
 	private int _curHealth;
@@ -46,10 +44,6 @@ public class Health: MonoBehaviour
 		originalShipPos = gameObject.transform.position;
 		go = GameObject.Find("AsteroidSpawner");
 		originalEnemyPos = go.transform.position;
-		gameOver = GameObject.Find("GameOver").GetComponent<TMP_Text>();
-		gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TMP_Text>();
-		playAgain = GameObject.Find("PlayAgain?");
-		playAgain.SetActive(false);
 	}
 
 	public void Damage(int amount, Vector3 hitPos = default)
@@ -78,9 +72,8 @@ public class Health: MonoBehaviour
 					DestroyOnDeath = true;
 					CurHealth = 0;
 					Damaged?.Invoke(amount, CurHealth, hitPos);
-					gameOverLabel.text = "Final Score";
-					gameOver.text = $"{GameUIManager.Inst.Score}";
-					playAgain.SetActive(true);
+					PlayerPrefs.SetInt(finalScore, GameUIManager.Inst.Score);
+					SceneManager.LoadScene("PlayAgain");
 				}
 			}
 
