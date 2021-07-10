@@ -7,6 +7,6 @@ public class PressPlay : MonoBehaviour
 {
     public void ChangeScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("RennansTestingScene");
     }
 }

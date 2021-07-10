@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Health: MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Health: MonoBehaviour
 	public int scoreValue = 100;
 	public int livesValue = 1;
 	public TMP_Text livesText;
+	Vector2 originalShipPos;
+	GameObject go;
+	public TMP_Text gameOver;
+	public TMP_Text gameOverLabel;
+	public GameObject playAgain;
+	Vector2 originalEnemyPos;
 
 	[SerializeField]
 	private int _curHealth;
@@ -36,6 +43,13 @@ public class Health: MonoBehaviour
 		CurHealth = MaxHealth;
 		Killed += pos => GameUIManager.Inst.Score += scoreValue;
 		livesText = GameObject.Find("LivesText").GetComponent<TMP_Text>();
+		originalShipPos = gameObject.transform.position;
+		go = GameObject.Find("AsteroidSpawner");
+		originalEnemyPos = go.transform.position;
+		gameOver = GameObject.Find("GameOver").GetComponent<TMP_Text>();
+		gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TMP_Text>();
+		playAgain = GameObject.Find("PlayAgain?");
+		playAgain.SetActive(false);
 	}
 
 	public void Damage(int amount, Vector3 hitPos = default)
@@ -57,16 +71,22 @@ public class Health: MonoBehaviour
 				livesText.text = $"{GameUIManager.Inst.Lives}";
 				CurHealth = MaxHealth;
 				Damaged?.Invoke(amount, CurHealth, hitPos);
+				gameObject.transform.position = originalShipPos;
+				go.transform.position = originalEnemyPos;
 				if (GameUIManager.Inst.Lives == 0){
 					IsKilled = true;
 					DestroyOnDeath = true;
 					CurHealth = 0;
 					Damaged?.Invoke(amount, CurHealth, hitPos);
+					gameOverLabel.text = "Final Score";
+					gameOver.text = $"{GameUIManager.Inst.Score}";
+					playAgain.SetActive(true);
 				}
 			}
 
-			if (DestroyOnDeath)
+			if (DestroyOnDeath){
 				Destroy(gameObject);
+			}
 		}
 	}
 
