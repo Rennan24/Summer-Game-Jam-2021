@@ -42,9 +42,6 @@ public class PlayerController: MonoBehaviour
 				shooter.Shoot();
 		}
 
-		if (Input.GetKeyDown(KeyCode.F))
-			health.Damage(1);
-
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 			curShooters = shooters;
 
